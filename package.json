@@ -4,11 +4,14 @@
   "description": "A jekyll website for photographer cum developer",
   "main": "npmfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp resize && bundle exec jekyll build",
+    "dev": "bundle exec jekyll serve",
+    "send": "rsync -avvz --update --no-perms --chown=www-data:www-data --delete ./_site/  root@frp:/usr/share/nginx/photography.v2fy.com/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rampatra/photography.git"
+    "url": "git+https://github.com/zhaoolee/photography.git"
   },
   "keywords": [
     "photography",
@@ -28,6 +31,7 @@
   "devDependencies": {
     "del": "^4.1.1",
     "gulp": "^4.0.2",
+    "gulp-if": "^3.0.0",
     "gulp-image-resize": "^0.13.1",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^5.0.0",

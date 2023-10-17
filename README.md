@@ -1,17 +1,5 @@
-<img src="https://i.imgur.com/ZG4gSnb.jpeg" alt="demo"/>
+本项目基于 https://github.com/rampatra/photography 进行修改
 
-# Photography ![OpenCollective](https://opencollective.com/photography/tiers/backer/badge.svg?label=backer&color=brightgreen)
-A jekyll website for photographers
-
-## Highlights
-1. Easy setup and you get a website of your own for __free__. No web hosting charges too.
-2. To add new pictures, you need to just upload them. __No code__ changes required.
-3. And, my favorite, you get to see EXIF data like __aperture, shutter speed, iso__ etc. when you click on any image, automagically. Moreover, you can customize this as per your needs.
-
-## Quick Start
-If you know a tad about tech and love taking pictures then this open-source project may help you setup a website to showcase
-all your creations without effort. And not just that, with this you need not pay a single dime to host your website as
-it's hosted by GitHub for __free__.
 
 **Just follow the below steps and your website would be live in no time:**
 
@@ -46,8 +34,8 @@ and thumbnail generation__. So if you're lazy like me then you can just do the f
 1. Fork and clone the project to your computer
 2. Go inside the project `$ cd photography`
 3. Install all dependencies by `$ npm install`
-4. Copy all your pictures (possibly jpg, the largest size available, straight from your camera) and put it inside `images` directory
-5. Run `$ gulp resize` to resize the images and to generate thumbnails automatically
+4. Copy all your pictures (possibly jpg, the largest size available, straight from your camera) and put it inside `images/fulls` directory
+5. Run `$ gulp resize`  to generate thumbnails automatically
 6. Push your changes to github.com by `$ git add --all` and `$ git commit -m "a nice commit message"` and then finally `$ git push origin master`
 
 ### Contact Form
@@ -63,24 +51,3 @@ Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com
 <a href="https://opencollective.com/photography#backers" target="_blank"><img src="https://opencollective.com/photography/backers.svg?width=890"></a>
 
 <!-- <a href="https://www.buymeacoffee.com/rampatra" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a> -->
-
-## Sponsors
-
-Proudly sponsored by [Presentify](http://presentify.compzets.com?ref=GitHub) and [BrowserStack](https://www.browserstack.com?ref=RamPatra). Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/animatescroll#sponsors)]
-
-<table>
-    <tr>
-        <td>
-            <a href="https://presentify.compzets.com/" target="_blank"><img src="https://presentify.compzets.com/assets/img/presentify/app-icon-512.png" width="150" height="150"></a>
-        </td>
-        <td>
-            <a href="https://www.browserstack.com?ref=RamPatra" target="_blank"><img src="https://i.imgur.com/LqI8CO1.png" width="130" height="130"></a>
-        </td>
-    </tr>
-</table>
-
-<a href="https://opencollective.com/photography#sponsors" target="_blank"><img src="https://opencollective.com/photography/sponsors.svg?width=890"></a>
-
----
-
-_P.S. For any queries or concerns, you can reach out to me on [Twitter](https://twitter.com/ram__patra). I'll try my best to help 🙏._

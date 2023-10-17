@@ -2,26 +2,34 @@
 
 var gulp = require('gulp');
 var imageResize = require('gulp-image-resize');
+var gulpif = require('gulp-if');
 var sass = require('gulp-sass')(require('sass'));
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var del = require('del');
+var fs = require('fs');
+var path = require('path');
+
 
 gulp.task('delete', function () {
     return del(['images/*.*']);
 });
 
+function shouldResize(file) {
+    var destPath = path.join('images/thumbs', path.basename(file.path));
+    var fileExists = fs.existsSync(destPath);
+    if (!fileExists) {
+        console.log('Resizing file: ' + file.path + ' Destination: ' + destPath);
+    }
+    return !fileExists;
+}
+
 gulp.task('resize-images', function () {
-    return gulp.src('images/*.*')
-        .pipe(imageResize({
-            width: 1024,
-            imageMagick: true
-        }))
-        .pipe(gulp.dest('images/fulls'))
-        .pipe(imageResize({
+    return gulp.src('images/fulls/*.*')
+        .pipe(gulpif(shouldResize, imageResize({
             width: 512,
             imageMagick: true
-        }))
+        })))
         .pipe(gulp.dest('images/thumbs'));
 });
 
@@ -50,7 +58,7 @@ gulp.task('minify-js', function () {
 gulp.task('build', gulp.series('sass', 'minify-js'));
 
 // resize images
-gulp.task('resize', gulp.series('resize-images', 'delete'));
+gulp.task('resize', gulp.series('resize-images'));
 
 // default task
 gulp.task('default', gulp.series('build', 'resize'));
