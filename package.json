@@ -5,7 +5,8 @@
   "main": "npmfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bundle exec jekyll serve",
+    "dev": "gulp zhaoolee-watch",
+    "build": "gulp resize && bundle exec jekyll build",
     "push": "gulp resize && bundle exec jekyll build && rsync -avvz --update --no-perms --chown=www-data:www-data --delete ./_site/  root@frp:/usr/share/nginx/photography.v2fy.com/ && git add . && git commit -m 'up' && git push"
   },
   "repository": {
@@ -28,6 +29,7 @@
   },
   "homepage": "https://github.com/rampatra/photography#readme",
   "devDependencies": {
+    "chokidar": "^3.5.3",
     "del": "^4.1.1",
     "gulp": "^4.0.2",
     "gulp-if": "^3.0.0",
@@ -35,6 +37,10 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^5.0.0",
     "gulp-uglify": "^3.0.0",
-    "sass": "^1.25.0"
+    "sass": "^1.25.0",
+    "through2": "^4.0.2"
+  },
+  "dependencies": {
+    "tree-kill": "^1.2.2"
   }
 }
