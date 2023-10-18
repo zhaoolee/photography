@@ -5,9 +5,8 @@
   "main": "npmfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp resize && bundle exec jekyll build",
     "dev": "bundle exec jekyll serve",
-    "send": "rsync -avvz --update --no-perms --chown=www-data:www-data --delete ./_site/  root@frp:/usr/share/nginx/photography.v2fy.com/"
+    "push": "gulp resize && bundle exec jekyll build && rsync -avvz --update --no-perms --chown=www-data:www-data --delete ./_site/  root@frp:/usr/share/nginx/photography.v2fy.com/ && git add . && git commit -m 'up' && git push"
   },
   "repository": {
     "type": "git",
